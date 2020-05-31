@@ -15,7 +15,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from django.conf.urls import url, include
+from windletterapi import apis
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('api/', include('windletterapi.urls')),
+    #url(r'^api/', include(apis.router.urls)),
 ]
